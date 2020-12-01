@@ -6,6 +6,13 @@
  */
 const sumMultiples = arr => {
   if (arr === undefined) throw new Error("arr is required");
+  var sum=0;
+  arr.forEach((x) => {
+    if (x % 3 == 0 || x % 5 == 0) {
+      sum = sum + x;
+    }
+  });
+  return sum;
 };
 
 /**
@@ -15,6 +22,16 @@ const sumMultiples = arr => {
  */
 const isValidDNA = str => {
   if (str === undefined) throw new Error("str is required");
+  var arr = [];
+  arr = str.split("");
+
+  for (var i = 0; i < arr.length; i++) {
+    if (arr[i] != "C" && arr[i] != "G" && arr[i] != "T" && arr[i] != "A") {
+      return false;
+    }
+  }
+  return true;
+
 };
 
 /**
@@ -24,6 +41,25 @@ const isValidDNA = str => {
  */
 const getComplementaryDNA = str => {
   if (str === undefined) throw new Error("str is required");
+  var compDNA = "";
+  var arr = [];
+  arr = str.split("");
+
+  for (var i = 0; i < arr.length; i++) {
+    if (arr[i] == "A") {
+      compDNA = compDNA + "T";
+    }
+    if (arr[i] == "C") {
+      compDNA = compDNA + "G";
+    }
+    if (arr[i] == "T") {
+      compDNA = compDNA + "A";
+    }
+    if (arr[i] == "G") {
+      compDNA = compDNA + "C";
+    }
+  }
+  return compDNA;
 };
 
 /**
@@ -33,6 +69,18 @@ const getComplementaryDNA = str => {
  */
 const isItPrime = n => {
   if (n === undefined) throw new Error("n is required");
+  if (n === 1) {
+    return false;
+  } else if (n === 2) {
+    return true;
+  } else {
+    for (var i = 2; i < n; i++) {
+      if (n % i === 0) {
+        return false;
+      }
+    }
+    return true;
+  }
 };
 
 /**
@@ -49,6 +97,13 @@ const isItPrime = n => {
 const createMatrix = (n, fill) => {
   if (n === undefined) throw new Error("n is required");
   if (fill === undefined) throw new Error("fill is required");
+  var root = Math.sqrt(n);
+  var arr = [];
+  for (var i = 0; i < root; i++) {
+    arr[i] = new Array(root);
+    arr[i].fill(fill);
+  }
+  return arr;
 };
 
 /**
@@ -66,6 +121,20 @@ const createMatrix = (n, fill) => {
 const areWeCovered = (staff, day) => {
   if (staff === undefined) throw new Error("staff is required");
   if (day === undefined) throw new Error("day is required");
+  
+  var count = 0;
+  for (var i = 0; i < staff.length; i++) {
+    for (var j = 0; j < staff[i].rota.length; j++) {
+      if (day == staff[i].rota[j]) {
+        count++;
+      }
+    }
+  }
+  if (count >= 3) {
+    return true;
+  } else {
+    return false;
+  }
 };
 
 module.exports = {
