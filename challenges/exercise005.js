@@ -9,14 +9,14 @@ const findNextNumber = (nums, n) => {
 
 const count1sand0s = str => {
   if (str === undefined) throw new Error("str is required");
-  var count1 = 0;
-  var count0 = 0;
-  var array = str.split("");
+  let count1 = 0;
+  let count0 = 0;
+  let array = str.split("");
   array.forEach((element) => {
-    if (element == "1") {
+    if (element == 1) {
       count1++;
     }
-    if (element == "0") {
+    if (element == 0) {
       count0++;
     }
   });
@@ -31,7 +31,7 @@ const reverseNumber = n => {
 
 const sumArrays = arrs => {
   if (arrs === undefined) throw new Error("arrs is required");
-  var sum = 0;
+  let sum = 0;
   arrs.forEach((element) => {
     for (var i = 0; i < element.length; i++) {
       sum = sum + element[i];
@@ -56,7 +56,7 @@ const findNeedle = (haystack, searchTerm) => {
   if (haystack === undefined) throw new Error("haystack is required");
   if (searchTerm === undefined) throw new Error("searchTerm is required");
   for (let key in haystack) {
-    if (typeof haystack[key] == 'string') { 
+    if (typeof haystack[key] === 'string') { 
       if (haystack[key].toLowerCase().indexOf(searchTerm.toLowerCase()) > -1) return true;
     }
   }

@@ -5,7 +5,7 @@ function getSquares(nums) {
 
 function camelCaseWords(words) {
   if (words === undefined) throw new Error("words is required");
-  var camword = "";
+  let camword = "";
   for (var i in words) {
     if (i == 0) {
       camword = camword + words[i];
@@ -18,7 +18,7 @@ function camelCaseWords(words) {
 
 function getTotalSubjects(people) {
   if (people === undefined) throw new Error("people is required");
-  var totalSub = 0;
+  let totalSub = 0;
   for (var i = 0; i < people.length; i++) {
     totalSub = totalSub + people[i].subjects.length;
   }
@@ -30,7 +30,7 @@ function checkIngredients(menu, ingredient) {
   if (!ingredient) throw new Error("ingredient is required");
   for (var i = 0; i < menu.length; i++) {
     for (var j = 0; j < menu[i].ingredients.length; j++) {
-      if (menu[i].ingredients[j] == ingredient) {
+      if (menu[i].ingredients[j] === ingredient) {
         return true;
       }
     }
