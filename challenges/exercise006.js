@@ -130,11 +130,7 @@ const areWeCovered = (staff, day) => {
       }
     }
   }
-  if (count >= 3) {
-    return true;
-  } else {
-    return false;
-  }
+  return count>=3?true:false;
 };
 
 module.exports = {
