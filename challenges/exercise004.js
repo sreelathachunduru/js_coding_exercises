@@ -1,28 +1,28 @@
 function findSmallNums(nums) {
   if (!nums) throw new Error("nums is required");
-  return nums.filter(x=>x<1);
+  return nums.filter(x => x < 1);
 }
 
 function findNamesBeginningWith(names, char) {
   if (!names) throw new Error("names is required");
   if (!char) throw new Error("char is required");
-  return names.filter(x=>x.charAt(0)===char);
+  return names.filter(x => x.charAt(0) === char);
 }
 
 function findVerbs(words) {
   if (!words) throw new Error("words is required");
- return words.filter(x=>x.substring(0,3)==="to ");
+  return words.filter(x => x.substring(0, 3) === "to ");
 }
 
 function getIntegers(nums) {
   if (!nums) throw new Error("nums is required");
-  return nums.filter(x=>Number.isInteger(x));
+  return nums.filter(x => Number.isInteger(x));
 }
 
 function getCities(users) {
   if (!users) throw new Error("users is required");
   let cities = [];
-  for(var i = 0; i < users.length; i++){
+  for (let i = 0; i < users.length; i++) {
     cities.push(users[i].data.city.displayName);
   }
   return cities;
@@ -30,7 +30,7 @@ function getCities(users) {
 
 function getSquareRoots(nums) {
   if (!nums) throw new Error("nums is required");
-  return nums.map(x=>parseFloat(Math.sqrt(x).toFixed(2)));
+  return nums.map(x => parseFloat(Math.sqrt(x).toFixed(2)));
 }
 
 function findSentencesContaining(sentences, str) {
@@ -38,7 +38,7 @@ function findSentencesContaining(sentences, str) {
   if (!str) throw new Error("str is required");
   let findsentence = [];
   sentences.forEach(element => {
-    if(element.toUpperCase().indexOf(str.toUpperCase()) != (-1)){
+    if (element.toUpperCase().indexOf(str.toUpperCase()) != (-1)) {
       findsentence.push(element);
     }
   })
@@ -49,7 +49,7 @@ function getLongestSides(triangles) {
   if (!triangles) throw new Error("triangles is required");
   let longestSides = [];
   triangles.forEach(x => {
-    longestSides.push(Math.max.apply(Math,x));
+    longestSides.push(Math.max.apply(Math, x));
   })
   return longestSides;
 }

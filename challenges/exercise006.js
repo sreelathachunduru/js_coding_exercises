@@ -6,7 +6,7 @@
  */
 const sumMultiples = arr => {
   if (arr === undefined) throw new Error("arr is required");
-  let sum=0;
+  let sum = 0;
   arr.forEach((x) => {
     if (x % 3 == 0 || x % 5 == 0) {
       sum = sum + x;
@@ -25,7 +25,7 @@ const isValidDNA = str => {
   let arr = [];
   arr = str.split("");
 
-  for (var i = 0; i < arr.length; i++) {
+  for (let i = 0; i < arr.length; i++) {
     if (arr[i] != "C" && arr[i] != "G" && arr[i] != "T" && arr[i] != "A") {
       return false;
     }
@@ -45,7 +45,7 @@ const getComplementaryDNA = str => {
   let arr = [];
   arr = str.split("");
 
-  for (var i = 0; i < arr.length; i++) {
+  for (let i = 0; i < arr.length; i++) {
     if (arr[i] === "A") {
       compDNA = compDNA + "T";
     }
@@ -74,7 +74,7 @@ const isItPrime = n => {
   } else if (n == 2) {
     return true;
   } else {
-    for (var i = 2; i < n; i++) {
+    for (let i = 2; i < n; i++) {
       if (n % i == 0) {
         return false;
       }
@@ -99,7 +99,7 @@ const createMatrix = (n, fill) => {
   if (fill === undefined) throw new Error("fill is required");
   let root = Math.sqrt(n);
   let arr = [];
-  for (var i = 0; i < root; i++) {
+  for (let i = 0; i < root; i++) {
     arr[i] = new Array(root);
     arr[i].fill(fill);
   }
@@ -121,16 +121,16 @@ const createMatrix = (n, fill) => {
 const areWeCovered = (staff, day) => {
   if (staff === undefined) throw new Error("staff is required");
   if (day === undefined) throw new Error("day is required");
-  
+
   let count = 0;
-  for (var i = 0; i < staff.length; i++) {
-    for (var j = 0; j < staff[i].rota.length; j++) {
+  for (let i = 0; i < staff.length; i++) {
+    for (let j = 0; j < staff[i].rota.length; j++) {
       if (day === staff[i].rota[j]) {
         count++;
       }
     }
   }
-  return count>=3?true:false;
+  return count >= 3 ? true : false;
 };
 
 module.exports = {

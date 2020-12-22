@@ -7,7 +7,7 @@ const sumDigits = n => {
   let str = n.toString();
   let sum = 0;
 
-  for (var i = 0; i < str.length; i++) {
+  for (let i = 0; i < str.length; i++) {
     sum += parseInt(str.charAt(i), 10);
   }
 
@@ -26,7 +26,7 @@ const createRange = (start, end, step) => {
   if (start === undefined) throw new Error("start is required");
   if (end === undefined) throw new Error("end is required");
   let range = [];
-  if(step == null){
+  if (step == null) {
     step = 1;
   }
 
@@ -70,7 +70,7 @@ const createRange = (start, end, step) => {
 const getScreentimeAlertList = (users, date) => {
   if (users === undefined) throw new Error("users is required");
   if (date === undefined) throw new Error("date is required");
-  
+
   let numUsers = [];
 
   users.forEach((user) => {
@@ -78,7 +78,7 @@ const getScreentimeAlertList = (users, date) => {
       if (screenDay.date == date) {
         let mins = 0;
 
-        for (var prop in screenDay.usage) {
+        for (let prop in screenDay.usage) {
           mins = mins + screenDay.usage[prop];
         }
 
@@ -109,7 +109,7 @@ const hexToRGB = hexStr => {
   const blue = parseInt(hexStr.substring(5, 7), 16).toString(10);
 
   return `rgb(${red},${green},${blue})`;
-  
+
 };
 
 /**
@@ -124,7 +124,7 @@ const hexToRGB = hexStr => {
  */
 const findWinner = board => {
   if (board === undefined) throw new Error("board is required");
-  for (var i = 0; i < 3; i++) {
+  for (let i = 0; i < 3; i++) {
     if (board[i][0] === "X" && board[i][1] === "X" && board[i][2] === "X") {
       return "X";
     }
@@ -133,7 +133,7 @@ const findWinner = board => {
     }
   }
 
-  for (var j = 0; j < 3; j++) {
+  for (let j = 0; j < 3; j++) {
     if (board[0][j] === "X" && board[1][j] === "X" && board[2][j] === "X") {
       return "X";
     }

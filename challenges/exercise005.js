@@ -33,7 +33,7 @@ const sumArrays = arrs => {
   if (arrs === undefined) throw new Error("arrs is required");
   let sum = 0;
   arrs.forEach((element) => {
-    for (var i = 0; i < element.length; i++) {
+    for (let i = 0; i < element.length; i++) {
       sum = sum + element[i];
     }
   });
@@ -45,9 +45,9 @@ const arrShift = arr => {
   if (arr.length < 1) return [];
   else {
     let first = arr[0];
-    let last = arr[arr.length-1];
+    let last = arr[arr.length - 1];
     arr[0] = last;
-    arr[arr.length-1] = first;
+    arr[arr.length - 1] = first;
     return arr
   }
 };
@@ -56,7 +56,7 @@ const findNeedle = (haystack, searchTerm) => {
   if (haystack === undefined) throw new Error("haystack is required");
   if (searchTerm === undefined) throw new Error("searchTerm is required");
   for (let key in haystack) {
-    if (typeof haystack[key] === 'string') { 
+    if (typeof haystack[key] === 'string') {
       if (haystack[key].toLowerCase().indexOf(searchTerm.toLowerCase()) > -1) return true;
     }
   }
@@ -67,13 +67,13 @@ const getWordFrequencies = str => {
   if (str === undefined) throw new Error("str is required");
   const freq = {};
   const list_words = str.split(' ')
-  for (var i = 0; i < list_words.length; i++) {
-    const word = list_words[i].toLowerCase().replace(/[,!?]/g,"");
+  for (let i = 0; i < list_words.length; i++) {
+    const word = list_words[i].toLowerCase().replace(/[,!?]/g, "");
     if (freq[word] === undefined) {
       freq[word] = 1;
     } else {
-      freq[word] += 1;    
-    }    
+      freq[word] += 1;
+    }
   }
   return freq;
 };
