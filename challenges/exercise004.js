@@ -1,22 +1,22 @@
 function findSmallNums(nums) {
   if (!nums) throw new Error("nums is required");
-  return nums.filter(x => x < 1);
+  return nums.filter(num => num < 1);
 }
 
 function findNamesBeginningWith(names, char) {
   if (!names) throw new Error("names is required");
   if (!char) throw new Error("char is required");
-  return names.filter(x => x.charAt(0) === char);
+  return names.filter(name => name.charAt(0) === char);
 }
 
 function findVerbs(words) {
   if (!words) throw new Error("words is required");
-  return words.filter(x => x.substring(0, 3) === "to ");
+  return words.filter(word => word.substring(0, 3) === "to ");
 }
 
 function getIntegers(nums) {
   if (!nums) throw new Error("nums is required");
-  return nums.filter(x => Number.isInteger(x));
+  return nums.filter(num => Number.isInteger(num));
 }
 
 function getCities(users) {

@@ -25,7 +25,7 @@ const count1sand0s = str => {
 
 const reverseNumber = n => {
   if (n === undefined) throw new Error("n is required");
-  n = n + "";
+  n += "";
   return parseFloat(n.split("").reverse().join(""));
 };
 
