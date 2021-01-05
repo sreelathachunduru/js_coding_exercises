@@ -20,13 +20,15 @@ const count1sand0s = str => {
       count0++;
     }
   });
-  return { 1: count1, 0: count0 };
+  return {
+    1: count1,
+    0: count0
+  };
 };
 
 const reverseNumber = n => {
   if (n === undefined) throw new Error("n is required");
-  n += "";
-  return parseFloat(n.split("").reverse().join(""));
+  return parseFloat(n.toString().split("").reverse().join(""));
 };
 
 const sumArrays = arrs => {

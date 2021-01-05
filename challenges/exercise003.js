@@ -1,19 +1,19 @@
 function getSquares(nums) {
   if (nums === undefined) throw new Error("nums is required");
-  return nums.map(num => Math.pow(num,2));
+  return nums.map(num => Math.pow(num, 2));
 }
 
 function camelCaseWords(words) {
   if (words === undefined) throw new Error("words is required");
-  let camword = "";
+  let camWord = "";
   for (let i in words) {
     if (i == 0) {
-      camword += words[i];
+      camWord += words[i];
     } else {
-      camword += words[i].charAt(0).toUpperCase() + words[i].slice(1);
+      camWord += words[i].charAt(0).toUpperCase() + words[i].slice(1);
     }
   }
-  return camword;
+  return camWord;
 }
 
 function getTotalSubjects(people) {
@@ -42,9 +42,7 @@ function duplicateNumbers(arr1, arr2) {
   if (arr1 === undefined) throw new Error("arr1 is required");
   if (arr2 === undefined) throw new Error("arr2 is required");
   let common = arr1.filter(duplicate => arr2.includes(duplicate));
-  let list = common.filter(function (value, index, self) {
-    return self.indexOf(value) === index;
-  });
+  var list = [...new Set(common)];
   return list.sort();
 }
 module.exports = {

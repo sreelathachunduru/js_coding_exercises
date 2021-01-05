@@ -52,11 +52,11 @@ function reverseAllWords(words) {
   if (words === undefined) throw new Error("words is required");
   let reverseWords = [];
   words.forEach(ele => {
-    let revword = "";
+    let revWord = "";
     for (let i = ele.length - 1; i >= 0; i--) {
-      revword += ele[i];
+      revWord += ele[i];
     }
-    reverseWords.push(revword);
+    reverseWords.push(revWord);
   });
   return reverseWords;
 }

@@ -7,9 +7,9 @@
 const sumMultiples = arr => {
   if (arr === undefined) throw new Error("arr is required");
   let sum = 0;
-  arr.forEach((x) => {
-    if (x % 3 == 0 || x % 5 == 0) {
-      sum = sum + x;
+  arr.forEach((num) => {
+    if (num % 3 == 0 || num % 5 == 0) {
+      sum = sum + num;
     }
   });
   return sum;
